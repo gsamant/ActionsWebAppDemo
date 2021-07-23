@@ -33,6 +33,7 @@ jobs:
     
     - name: Run Azure Web App Deploy
       uses: azure/webapps-deploy@v2
+      working-directory: TestWebApp
       with:
          app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
          publish-profile: ${{ secrets.PUBLISH_PROFILE  }} # Define secret variable in repository settings as per action documentation
