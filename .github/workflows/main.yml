@@ -22,7 +22,11 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
       working-directory: TestWebApp
-      
+    
+    - name: dotnet publish
+      run: |
+        dotnet publish -c Release -o dotnetcorewebapp 
+    
     - name: Run Azure Web App Deploy
       uses: azure/webapps-deploy@v1
       with:
