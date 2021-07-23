@@ -22,4 +22,10 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
       working-directory: TestWebApp
- 
+      
+    - name: Run Azure Web App Deploy
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: ActionTestGS
+        publish-profile: $PUBLISH_PROFILE
+        package: './dotnetcorewebapp'
